@@ -1,60 +1,73 @@
 <template>
-  
-    <div>
-      <b-navbar toggleable="lg" type="dark" variant="primary">
-        <b-container>
-        <b-navbar-brand href="#">
-          <b-icon-arrow-up></b-icon-arrow-up>
-        </b-navbar-brand>
+  <div class="main">
+      <div>
+        <left-menu/>
+      </div>
+      
+      <div class="content-page">
+        <top-bar/>
+        <div class="title-conainer">
+          <h1>HealthyFood</h1>
+          <p>Happy life</p>
+          <b-img class="img" :src="cucumbers" alt="Image 1"></b-img>
+        </div>
 
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-
-        <b-collapse id="nav-collapse" is-nav>
-          <b-navbar-nav>
-            <b-nav-item href="#">Рецепты</b-nav-item>
-            <b-nav-item href="#" >Disabled</b-nav-item>
-          </b-navbar-nav>
-
-        
-        </b-collapse>
-        </b-container>
-      </b-navbar>
-    </div>
-
+        <recipes-list />
+      </div>
+  </div>
 </template>
 
 <script>
-import {
-  BNavbar, 
-  BCollapse, 
-  BNavbarNav, 
-  // BNavItemDropdown,
-  // BDropdownItem,
-  // BNavForm,
-  // BButton,
-  // BNavbarBrand,
-  // BFormInput,
-  BContainer,
-  BIconArrowUp,
-} from "bootstrap-vue"
+import LeftMenu from "../components/LeftMenu"
+import TopBar from "../components/TopBar"
+import cucumbers from "@/assets/Image/cucumbers.png"
+import RecipesList from "@/components/RecipesList"
+import {BImg}from "bootstrap-vue"
 
 export default {
   name: 'MainPage',
+   
   components: {
-    BNavbar,
-    BCollapse, 
-    BNavbarNav, 
-    // BNavItemDropdown,
-    // BDropdownItem,
-    // /BNavForm,
-    // BButton,
-    // BNavbarBrand,
-    // BFormInput,
-    BContainer,
-    BIconArrowUp,
+    LeftMenu,
+    TopBar,
+    RecipesList,
+    BImg,
+  },
+  computed: {
+    cucumbers() {
+      return cucumbers
+    }
   }
 }
 </script>
 
-<style>
+<style scoupe>
+
+.main {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 32px;
+}
+.content-page {
+  padding-right: 32px;
+  max-width: 940px;
+}
+.my-text {
+  width: 500px;
+  font-size: 20px;
+}
+.title-conainer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 216px;
+}
+.img {
+  position: absolute;
+  right: 0;
+  z-index: -1;
+  width: 655px;
+  top: -61px;
+}
 </style>
