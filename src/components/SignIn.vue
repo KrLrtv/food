@@ -10,6 +10,7 @@
     </div>
 
     <b-modal
+      v-model="bodyBgVariant"
       :no-close-on-esc='true'
       :cancel-disabled='true'
       :no-close-on-backdrop='true'
@@ -24,6 +25,7 @@
     >
       <form ref="form" @submit.stop.prevent="handleSubmit">
         <b-form-group
+        
           label="Name"
           label-for="name-input"
           invalid-feedback="Name is required"
@@ -46,7 +48,14 @@
       return {
         name: '',
         user: '',
-        submittedNames: []
+        submittedNames: [],
+        variants: ['primary', 'secondary', 'success', 'warning', 'danger', 'info', 'light', 'dark'],
+        headerBgVariant: 'dark',
+        headerTextVariant: 'light',
+        bodyBgVariant: 'light',
+        bodyTextVariant: 'dark',
+        footerBgVariant: 'warning',
+        footerTextVariant: 'dark'
       }
     },
     methods: {

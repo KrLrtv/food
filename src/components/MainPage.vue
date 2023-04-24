@@ -4,7 +4,7 @@
         <left-menu/>
       </div>
       
-      <div class="content-page">
+      <div  class="content-page">
         <top-bar/>
         <div class="title-conainer">
           <h1>HealthyFood</h1>

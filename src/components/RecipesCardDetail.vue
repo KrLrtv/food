@@ -1,6 +1,6 @@
 <template>
     <div class="carddetail card-recipes">
-        <div v-if="!carddetail">Выбери рецепт</div>
+        <div  v-if="!carddetail">Выберите блюдо</div>
         <div v-else>
             <b-img class="img-card" :src="carddetail.img"></b-img>
             <h4 class="card-recipes-title">{{carddetail.title}}</h4>
