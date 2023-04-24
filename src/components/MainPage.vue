@@ -13,7 +13,9 @@
         </div>
 
         <recipes-list />
+        <Sign-in/>
       </div>
+      
   </div>
 </template>
 
@@ -23,6 +25,7 @@ import TopBar from "../components/TopBar"
 import cucumbers from "@/assets/Image/cucumbers.png"
 import RecipesList from "@/components/RecipesList"
 import {BImg}from "bootstrap-vue"
+import SignIn from "../components/SignIn"
 
 export default {
   name: 'MainPage',
@@ -32,6 +35,7 @@ export default {
     TopBar,
     RecipesList,
     BImg,
+    SignIn,
   },
   computed: {
     cucumbers() {
